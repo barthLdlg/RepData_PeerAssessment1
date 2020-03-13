@@ -58,7 +58,7 @@ The **median** total number of steps taken per day is 10395 steps.
 
 ## What is the average daily activity pattern?
 
-1. Make a time series plot (i.e. \color{red}{\verb|type = "l"|}type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+1. Make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 ```r
 interGroup <- group_by(dataAct, interval)
@@ -81,7 +81,7 @@ The 5-minute interval which contains the maximum number of steps is 835
 
 ## Imputing missing values
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with \color{red}{\verb|NA|}NAs)
+1. Calculate and report the total number of missing values in the dataset
 
 ```r
 nbeNA <- sum(!complete.cases(dataAct))
@@ -134,7 +134,7 @@ dataActFill$dayType <- ifelse(dataActFill$dayType==6|dataActFill$dayType==7, "we
 dataActFill <- select(dataActFill,-mean)
 ```
 
-2. Make a panel plot containing a time series plot (i.e. \color{red}{\verb|type = "l"|}type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
 
 ```r

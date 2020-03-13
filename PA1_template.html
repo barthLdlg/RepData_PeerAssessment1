@@ -400,7 +400,7 @@ medianStep &lt;- median(sumStep$sumStep, na.rm = T)</code></pre>
 <div id="what-is-the-average-daily-activity-pattern" class="section level2">
 <h2>What is the average daily activity pattern?</h2>
 <ol style="list-style-type: decimal">
-<li>Make a time series plot (i.e. type=“l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)</li>
+<li>Make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)</li>
 </ol>
 <pre class="r"><code>interGroup &lt;- group_by(dataAct, interval)
 meanStepInter &lt;- summarise(interGroup, mean(steps, na.rm = T))
@@ -417,7 +417,7 @@ plot(x=meanStepInter$interval, y=meanStepInter$meanStep,
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <ol style="list-style-type: decimal">
-<li>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)</li>
+<li>Calculate and report the total number of missing values in the dataset</li>
 </ol>
 <pre class="r"><code>nbeNA &lt;- sum(!complete.cases(dataAct))</code></pre>
 <p>The number of missing values in the dataset is 2304.</p>
@@ -456,7 +456,7 @@ medianStepFill &lt;- median(sumStepFill$sumStep)</code></pre>
 dataActFill$dayType &lt;- ifelse(dataActFill$dayType==6|dataActFill$dayType==7, &quot;weekend&quot;, &quot;weekday&quot;)
 dataActFill &lt;- select(dataActFill,-mean)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Make a panel plot containing a time series plot (i.e. type=“l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</li>
+<li>Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</li>
 </ol>
 <pre class="r"><code>intervalGroup &lt;- group_by(dataActFill, interval, dayType)
 meanStepInterval &lt;- summarise(intervalGroup, mean(steps, na.rm = T))
